@@ -53,6 +53,7 @@ button { padding:12px 26px; border-radius:30px; border:none; font-size:16px; mar
 .final { width:100%; height:100%; display:flex; justify-content:center; align-items:center; flex-direction:column; position:relative; overflow:hidden; background:linear-gradient(180deg,#ff758c,#ff7eb3); color:white; }
 .couple { font-size:60px; display:flex; gap:60px; animation:meet 3s ease forwards; }
 @keyframes meet { to { gap:10px; } }
+.final-text { margin-top:20px; font-size:20px; text-align:center; }
 
 .hidden { display:none; }
 
@@ -107,9 +108,8 @@ button { padding:12px 26px; border-radius:30px; border:none; font-size:16px; mar
 
 <!-- FINAL -->
 <div id="final" class="final hidden">
-    <div class="couple">👦 ❤️ 👧</div>
-    <h2>შენ ხარ ჩემი სამყარო</h2>
-    <p>გილოცავ ვალენტინობას 💖</p>
+    <div class="couple">💁‍♀️ <strong>ნინო</strong> 💁‍♀️</div>
+    <div class="final-text">შენ ხარ ჩემი სამყარო<br>გილოცავ ვალენტინობას 💖</div>
 </div>
 
 </div>
@@ -123,7 +123,7 @@ const messages = [
  "და მინდა გულწრფელად გკითხო 🥺"
 ];
 const questions = [
- "იქნები ჩემი ვალენტინი? 💘",
+ "იქნება ჩემი ვალენტინი? 💘",
  "მართლა? ბოლომდე? 🥺",
  "დარწმუნებული ხარ? ❤️",
  "მაშინ საბოლოოდ… კი? 💖"
@@ -154,7 +154,7 @@ function sendNext(){
  } else { ask(); }
 }
 
-// აქ ყველა მესიჯის ადრესანტი ნინი
+// ყველა მესიჯის ადრესანტი ნინი
 function sendMessage(text){
  const bubble=document.createElement("div");
  bubble.className="bubble from-d";
@@ -191,7 +191,7 @@ function yes(){
    clearInterval(heartsInterval);
    app.classList.add("hidden");
    final.classList.remove("hidden");
-   setInterval(dropHeart,400);
+   setInterval(dropHeart,400); // გულები კვლავ ცვიოდეს
  }
 }
 
