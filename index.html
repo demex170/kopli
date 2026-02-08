@@ -98,7 +98,7 @@ button { padding:12px 26px; border-radius:30px; border:none; font-size:16px; mar
     </div>
     <div class="nav">
         <span class="back">‹</span>
-        <span class="contact-name">ნინი</span>
+        <span class="contact-name">ნინო</span>
         <span class="more">⋯</span>
     </div>
     <div class="chat" id="chat"></div>
@@ -154,16 +154,19 @@ function sendNext(){
  } else { ask(); }
 }
 
+// აქ ყველა მესიჯის ადრესანტი ნინი
 function sendMessage(text){
  const bubble=document.createElement("div");
  bubble.className="bubble from-d";
+ bubble.innerHTML = `<strong>ნინი</strong><br>`; 
  chat.appendChild(bubble);
  msgSound.play();
  let i=0;
  const t=setInterval(()=>{
-   bubble.textContent+=text[i++];
+   bubble.innerHTML = `<strong>ნინი</strong><br>${text.slice(0,i)}`;
    bubble.style.opacity=1;
-   if(i===text.length) clearInterval(t);
+   i++;
+   if(i>text.length) clearInterval(t);
  },35);
  chat.scrollTop=chat.scrollHeight;
 }
@@ -211,4 +214,3 @@ updateTime();
 
 </body>
 </html>
-
